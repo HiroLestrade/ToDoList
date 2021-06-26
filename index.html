@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="./index.js"></script>
+    <script src="./functions.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="form">
+            <label for="title">
+                <span>Title</span>
+                <input type="text" name="title" id="title">
+            </label>
+
+            <label for="description">
+                <span>Description</span>
+                <input type="text" name="description" id="description">
+            </label>
+            
+            <button id="add">Add</button>
+        </section>
+
+        <section class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Completed</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
