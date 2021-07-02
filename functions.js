@@ -1,9 +1,12 @@
 const local = window.localStorage;
-let regs = local.length;
 
 function addTask(obj, table) {
   //add object to the local storage
   local.setItem(obj.id, JSON.stringify(obj));
+
+  //Number of task
+  const numCol = document.createElement('td');
+  numCol.innerText = obj.id;
 
   //Title
   const titleCol = document.createElement("td");
@@ -59,6 +62,7 @@ function addTask(obj, table) {
 
   //Row
   const row = document.createElement("tr");
+  row.appendChild(numCol);
   row.appendChild(titleCol);
   row.appendChild(descriptionCol);
   row.appendChild(checkCol);
@@ -67,16 +71,13 @@ function addTask(obj, table) {
 
   //Add row to the table
   table.appendChild(row);
-
-  //update the regs number
-  regs = local.length;
 }
 
 function createTask(id, title, description) {
   let obj = {
-    id: id,
-    title: title,
-    description: description,
+    id,
+    title,
+    description,
     checked: false,
   };
 

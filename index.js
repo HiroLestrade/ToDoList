@@ -14,21 +14,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
         //theres no empty text inputs, so add the task
         else{
-            //declare object
-            let obj;
-
-            //if the actual register is not in the local storage, creates the task
-            if(!(++regs in local)){
-                console.log("is not in local")
-                obj = createTask(regs, title.value, description.value);
-                console.log(regs);
+            let reg = 1;
+            while(reg in local){
+                reg++;
             }
-            //if the actual register is in the local storage, udate it and creates the task
-            else{
-                console.log("is in local")
-                obj = createTask(++regs, title.value, description.value);
-            }
-
+            let obj = createTask(reg, title.value, description.value);
             addTask(obj, table);    
         }
     };
